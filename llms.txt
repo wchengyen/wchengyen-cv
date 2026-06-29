@@ -1,0 +1,99 @@
+# ChengYen Wang — CV
+
+> Technical Account Manager based in Beijing, China. 10+ years driving enterprise cloud adoption, large-scale migration, and digital transformation. AWS-certified across 6 specialties.
+
+## About
+
+ChengYen Wang is a Technical Account Manager with 10+ years of experience driving enterprise cloud adoption, large-scale migration, and digital transformation. Trusted advisor to senior stakeholders, leading cross-functional teams to deliver measurable business outcomes. Expertise in cloud architecture, IT operations, and AIOps, with proven success in improving system reliability, scalability, and cost efficiency. AWS-certified across 6 specialties.
+
+## Contact
+
+- Email: wchengyen0106@126.com
+- GitHub: https://github.com/wchengyen
+- AIOps project: https://github.com/wchengyen/kiro-devops
+- Location: Beijing, China
+
+## Core Focus Areas
+
+- **Cloud**: AWS (6 specialties), Cloud Architecture & Migration, Large-scale Modernization, Cost Optimization (FinOps), Multi-region Resilience
+- **AIOps**: AIOps Agent Platform (alert + agent automation), Incident Diagnosis Automation, Runbook Execution, Predictive Monitoring, MTTR Reduction
+- **GenAI / AI**: GenAI Solution Design, LLM Inference (CPU-based), Dify Workflows on H20, Stable Diffusion / AIGC, Natural Language Operations
+- **Customer-facing**: Technical Account Management (TAM), Pre-Sales & Post-Sales, Executive Stakeholder Management, Cross-functional Coordination, Critical Event Delivery
+- **Industries served**: Internet & SaaS, Gaming, Healthcare, Education, Financial Services (ICBC, Minsheng Bank, PSBC)
+
+## Experience
+
+### NWCD (AWS China Region) — Technical Account Manager (Jan 2019 – Present, Beijing)
+Key Industries: Internet, Gaming, Healthcare, SaaS, Education
+
+- Spearheaded Enterprise On-Ramp Program, achieving 36% YoY customer growth and 50.8% AWS Usage fee growth by Q3 2025
+- Directed large-scale cloud migration and modernization projects, achieving 30%+ cost reduction and improved system performance
+- Coordinated across Support, Product, and SRE teams to deliver critical events (game launches, peak traffic), ensuring zero major incidents
+- Resolved high-priority technical escalations, improving customer satisfaction for TAM to 100%
+
+**AIOps / GenAI Innovation:**
+- Designed and implemented an AIOps agent platform (alert + agent automation) for intelligent operations
+- Automated incident diagnosis and runbook execution, reducing MTTR by 40%+
+- Enabled natural language operations and predictive monitoring across cloud environments
+- Designed custom solutions / POCs to resolve customer pain points by building Dify workflows in H20
+- Delivered technical webinars and blogs on operations and GenAI topics
+
+### Thomson Reuters — Technical Account Manager (Pre-Sales & Post-Sales) (Sep 2015 – Dec 2018, Beijing)
+Key Accounts: ICBC, China Minsheng Bank, Postal Savings Bank of China
+
+- Defined technical strategies and architectures for major financial institutions (ICBC, Minsheng Bank, PSBC)
+- Partnered with account teams to drive solution adoption and long-term customer success
+
+### IBM — Senior IT Specialist (Pre-Sales) (Feb 2008 – Sep 2015, Taipei, Taiwan)
+
+- Delivered core banking system upgrades and architecture transformations
+- Improved system performance, availability, and cross-region architecture resilience
+
+### Earlier Roles
+
+- Software Engineer at ShineWave (2008)
+- Intern at Moker (2007)
+
+## AWS Certificates (7)
+
+1. AWS Certified Developer – Associate
+2. AWS Certified Solutions Architect – Associate
+3. AWS Certified Solutions Architect – Professional (SAP)
+4. AWS Certified Big Data – Specialty (BDS)
+5. AWS Certified Database – Specialty (DBS)
+6. AWS Certified Security – Specialty (SCS)
+7. AWS Certified Machine Learning – Specialty (MLS)
+
+## Public Sharing
+
+### AIOps Agent Platform (https://github.com/wchengyen/kiro-devops)
+Multi-component agent platform for intelligent cloud operations — automated alert triage, incident diagnosis, and runbook execution. Reduced MTTR by 40%+.
+
+### Dify Workflow POCs on H20 (Enterprise Customers, 2024)
+Custom GenAI POCs built with Dify on H20 to address specific enterprise pain points — workflow-based solutions for alert triage, knowledge retrieval, customer support.
+
+### CPU-based LLM Inference Webinar (2024-08)
+https://www.nwcdcloud.cn/actnoticedetail/64.aspx
+Public technical session on deploying LLM inference services on CPU-only infrastructure for cost-sensitive workloads.
+
+### Stable Diffusion / AIGC Webinar (2023-04)
+https://www.nwcdcloud.cn/playback.aspx?id=51
+Public technical session on hands-on Stable Diffusion for image generation, demystifying AIGC for enterprise audiences.
+
+### NWCD Public Blog: 建构自动化运维手册和操作手册实现卓越运营 (2022-12)
+https://www.nwcdcloud.cn/articledetail.aspx?id=31
+Authored blog on building automated operations and runbooks to achieve operational excellence.
+
+### AWS China Customer Story (Public Reference)
+https://www.amazonaws.cn/customer-stories/reduce-cost-and-increase-efficiency/
+Public customer-success story on AWS China (NWCD), covering cost reduction and efficiency gains for an enterprise customer.
+
+## Education
+
+- **University of Florida – Warrington College of Business** — Master of Science in Decision & Information Science (Dec 2007, GPA 3.66/4.0). Teaching Assistant for Database Systems (1 year).
+- **National Central University (NCU)** — Bachelor of Business Administration in Management Information Systems (Fall 2003). Managed IT infrastructure for the School of Management (2 years).
+
+## Languages
+
+- Mandarin — Proficient
+- English — Proficient

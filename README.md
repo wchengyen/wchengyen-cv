@@ -1,6 +1,6 @@
 # wchengyen-cv
 
-Personal CV site for **Weng-Hsiang Cheng (鄭文祥)** — Senior Backend / Platform Engineer.
+Personal CV site for **ChengYen Wang (王正彥)** — Technical Account Manager @ NWCD (AWS China Region).
 
 🌐 **Live:** https://wchengyen.github.io/wchengyen-cv/
 
@@ -10,6 +10,14 @@ Personal CV site for **Weng-Hsiang Cheng (鄭文祥)** — Senior Backend / Plat
 - **Tailwind CSS v4** (via `@tailwindcss/vite`)
 - **GitHub Pages** for hosting (static, no server)
 - **GitHub Actions** for CI/CD — every push to `main` rebuilds and deploys
+
+## Bilingual
+
+The site supports **EN** and **中** (Traditional Chinese). Switch via the segmented control in the header.
+
+- Translations live in [`src/data/resume.en.ts`](src/data/resume.en.ts) and [`src/data/resume.zh.ts`](src/data/resume.zh.ts)
+- UI strings live in each language file's `ui` export
+- Language preference is persisted in `localStorage` and synced to `<html lang="…">`
 
 ## Local development
 
@@ -27,9 +35,9 @@ npm run preview  # preview the production build locally
 
 ## Editing the CV
 
-All copy lives in a single file: [`src/data/resume.ts`](src/data/resume.ts).
+All copy lives in two files (one per language): [`src/data/resume.en.ts`](src/data/resume.en.ts) and [`src/data/resume.zh.ts`](src/data/resume.zh.ts).
 
-Edit the typed `profile`, `experiences`, `projects`, `skillGroups`, `education`, `languages`, or `interests` exports. The page is fully data-driven — no JSX editing required for content changes.
+Edit the typed `profile`, `experiences`, `skillGroups`, `certificates`, `projects`, `education`, or `languages` exports. The page is fully data-driven — no JSX editing required for content changes. To add a third language, see [`src/data/index.ts`](src/data/index.ts) and the type definitions in [`src/data/types.ts`](src/data/types.ts).
 
 ## Deployment
 
@@ -59,4 +67,4 @@ To deploy as a **user site** at `https://<user>.github.io/`:
 
 ## License
 
-© Weng-Hsiang Cheng. All rights reserved.
+© ChengYen Wang. All rights reserved.

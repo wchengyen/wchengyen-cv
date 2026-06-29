@@ -184,6 +184,10 @@ export const zh: ResumeData = {
         "鎖定需要 LLM 能力但無 GPU 預算的團隊",
       ],
       tags: ["LLM", "推論", "CPU", "Webinar"],
+      link: {
+        label: "nwcdcloud.cn 活動",
+        href: "https://www.nwcdcloud.cn/actnoticedetail/64.aspx",
+      },
     },
     {
       name: "Stable Diffusion / AIGC webinar",

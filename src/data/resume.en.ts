@@ -179,6 +179,10 @@ export const en: ResumeData = {
         "Targeted teams that need LLM capability without GPU spend",
       ],
       tags: ["LLM", "Inference", "CPU", "Webinar"],
+      link: {
+        label: "nwcdcloud.cn event",
+        href: "https://www.nwcdcloud.cn/actnoticedetail/64.aspx",
+      },
     },
     {
       name: "Stable Diffusion / AIGC Webinar",

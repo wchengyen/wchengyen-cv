@@ -73,6 +73,7 @@ Multi-component agent platform for intelligent cloud operations — automated al
 Custom GenAI POCs built with Dify on H20 to address specific enterprise pain points — workflow-based solutions for alert triage, knowledge retrieval, customer support.
 
 ### CPU-based LLM Inference Webinar (2024-08)
+https://www.nwcdcloud.cn/actnoticedetail/64.aspx
 Public technical session on deploying LLM inference services on CPU-only infrastructure for cost-sensitive workloads.
 
 ### Stable Diffusion / AIGC Webinar (2023-04)

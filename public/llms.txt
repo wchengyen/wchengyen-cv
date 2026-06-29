@@ -79,6 +79,7 @@ Public technical session on deploying LLM inference services on CPU-only infrast
 Public technical session on hands-on Stable Diffusion for image generation, demystifying AIGC for enterprise audiences.
 
 ### NWCD Public Blog: 建构自动化运维手册和操作手册实现卓越运营 (2022-12)
+https://www.nwcdcloud.cn/articledetail.aspx?id=31
 Authored blog on building automated operations and runbooks to achieve operational excellence.
 
 ### AWS China Customer Story (Public Reference)

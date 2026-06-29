@@ -201,6 +201,10 @@ export const en: ResumeData = {
         "Drew from real customer engagements at NWCD",
       ],
       tags: ["Blog", "Runbooks", "Operations"],
+      link: {
+        label: "nwcdcloud.cn article",
+        href: "https://www.nwcdcloud.cn/articledetail.aspx?id=31",
+      },
     },
     {
       name: "AWS China Customer Story (Public Reference)",

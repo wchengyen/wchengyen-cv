@@ -205,6 +205,10 @@ export const zh: ResumeData = {
         "取材自 NWCD 實際客戶 engagement 經驗",
       ],
       tags: ["部落格", "Runbook", "維運"],
+      link: {
+        label: "nwcdcloud.cn 文章",
+        href: "https://www.nwcdcloud.cn/articledetail.aspx?id=31",
+      },
     },
     {
       name: "AWS 中國客戶案例 (公開引用)",

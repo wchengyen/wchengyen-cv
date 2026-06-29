@@ -13,7 +13,6 @@ export type Profile = {
   title: string;
   location: string;
   email: string;
-  phone: string;
   /** GitHub profile URL. */
   github: string;
   linkedin?: string;

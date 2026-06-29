@@ -7,7 +7,6 @@ export const zh: ResumeData = {
     title: "技術客戶經理 (TAM)",
     location: "中國北京",
     email: "wchengyen0106@126.com",
-    phone: "+86 18614081977",
     github: "https://github.com/wchengyen",
     summary:
       "技術客戶經理 (Technical Account Manager),10 年以上企業雲端採用、大型遷移及數位轉型經驗。為高階主管提供策略建議,帶領跨功能團隊交付可量化的業務成果。專精於雲端架構、IT 維運及 AIOps,在提升系統可靠度、可擴展性及成本效率方面有實戰成績。AWS 認證橫跨 6 個 Specialty。",

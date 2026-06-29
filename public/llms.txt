@@ -9,7 +9,6 @@ ChengYen Wang is a Technical Account Manager with 10+ years of experience drivin
 ## Contact
 
 - Email: wchengyen0106@126.com
-- Phone: +86 18614081977
 - GitHub: https://github.com/wchengyen
 - AIOps project: https://github.com/wchengyen/kiro-devops
 - Location: Beijing, China

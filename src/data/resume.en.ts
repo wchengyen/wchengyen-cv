@@ -6,7 +6,6 @@ export const en: ResumeData = {
     title: "Technical Account Manager",
     location: "Beijing, China",
     email: "wchengyen0106@126.com",
-    phone: "+86 18614081977",
     github: "https://github.com/wchengyen",
     summary:
       "Technical Account Manager with 10+ years of experience driving enterprise cloud adoption, large-scale migration, and digital transformation. Trusted advisor to senior stakeholders, leading cross-functional teams to deliver measurable business outcomes. Expertise in cloud architecture, IT operations, and AIOps, with proven success in improving system reliability, scalability, and cost efficiency. AWS-certified (6 specialties).",

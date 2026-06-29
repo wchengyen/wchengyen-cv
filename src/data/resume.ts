@@ -1,18 +1,16 @@
 /**
  * Resume data — single source of truth.
- * All copy edits happen here. Sections render from this structure.
- * Sourced from resume-202605.pdf.
+ * Sourced from resume-202605.pdf (ChengYen Wang — Technical Account Manager @ NWCD).
  */
-
-export type Skill = {
-  name: string;
-  /** Tailwind text-* class for visual weight */
-  tone?: "primary" | "muted" | "accent";
-};
 
 export type SkillGroup = {
   category: string;
-  items: Skill[];
+  items: string[];
+};
+
+export type ExperienceSubsection = {
+  title: string;
+  bullets: string[];
 };
 
 export type Experience = {
@@ -23,8 +21,18 @@ export type Experience = {
   /** ISO 8601 month — `YYYY-MM` or `"Present"` */
   end: string;
   location: string;
+  /** Optional one-liner context — e.g. "Key Industries: Internet, Gaming, ..." */
+  description?: string;
   bullets: string[];
-  stack: string[];
+  /** Sub-categories within a single role (e.g. "AIOps / GenAI Innovation") */
+  subsections?: ExperienceSubsection[];
+  /** Tech stack or domain tags */
+  tags?: string[];
+};
+
+export type Certificate = {
+  name: string;
+  code?: string;
 };
 
 export type Project = {
@@ -32,8 +40,7 @@ export type Project = {
   period: string;
   description: string;
   bullets: string[];
-  stack: string[];
-  /** Optional link to a demo, repo, or case study */
+  tags: string[];
   link?: { label: string; href: string };
 };
 
@@ -42,6 +49,7 @@ export type Education = {
   schoolEn: string;
   department: string;
   period: string;
+  detail?: string;
 };
 
 export type Language = {
@@ -50,224 +58,245 @@ export type Language = {
 };
 
 export const profile = {
-  name: "Weng-Hsiang Cheng",
-  nameZh: "鄭文祥",
-  title: "Senior Backend / Platform Engineer",
-  location: "Taipei, Taiwan",
-  email: "wchengyen@gmail.com",
-  phone: "+886-910-602-378",
+  name: "ChengYen Wang",
+  title: "Technical Account Manager",
+  location: "Beijing, China",
+  email: "wchengyen0106@126.com",
+  phone: "+86 18614081977",
+  /** GitHub profile (kiro-devops repo is linked separately under Public Sharing) */
   github: "https://github.com/wchengyen",
   linkedin: undefined as string | undefined,
   summary:
-    "Backend engineer specializing in high-traffic backend systems, distributed architecture, and LLM-integrated applications. 7+ years of experience designing RESTful APIs, microservices, and data pipelines processing millions of records daily. Proven track record of leading cross-team projects, mentoring engineers, and delivering measurable business impact through system optimization.",
+    "Technical Account Manager with 10+ years of experience driving enterprise cloud adoption, large-scale migration, and digital transformation. Trusted advisor to senior stakeholders, leading cross-functional teams to deliver measurable business outcomes. Expertise in cloud architecture, IT operations, and AIOps, with proven success in improving system reliability, scalability, and cost efficiency. AWS-certified (6 specialties).",
 } as const;
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: "Languages",
+    category: "Cloud",
     items: [
-      { name: "C# / .NET Core" },
-      { name: "Python" },
-      { name: "Go" },
-      { name: "Node.js" },
-      { name: "Java" },
+      "AWS (6 specialties — see Certificates)",
+      "Cloud Architecture & Migration",
+      "Large-scale Modernization",
+      "Cost Optimization (FinOps)",
+      "Multi-region Resilience",
     ],
   },
   {
-    category: "Datastores",
+    category: "AIOps",
     items: [
-      { name: "Microsoft SQL Server" },
-      { name: "PostgreSQL" },
-      { name: "MongoDB" },
-      { name: "Redis" },
+      "AIOps Agent Platform (alert + agent automation)",
+      "Incident Diagnosis Automation",
+      "Runbook Execution",
+      "Predictive Monitoring",
+      "MTTR Reduction",
     ],
   },
   {
-    category: "Infrastructure",
+    category: "GenAI / AI",
     items: [
-      { name: "Docker" },
-      { name: "Kubernetes" },
-      { name: "AWS (EC2 / S3 / Lambda / SageMaker / Step Functions)" },
+      "GenAI Solution Design",
+      "LLM Inference (CPU-based deployment)",
+      "Dify Workflows (H20)",
+      "Stable Diffusion / AIGC",
+      "Natural Language Operations",
     ],
   },
   {
-    category: "AI / LLM",
+    category: "Customer-facing",
     items: [
-      { name: "OpenAI" },
-      { name: "Claude" },
-      { name: "OpenRouter" },
-      { name: "Ollama" },
+      "Technical Account Management (TAM)",
+      "Pre-Sales & Post-Sales",
+      "Executive Stakeholder Management",
+      "Cross-functional Coordination (Support / Product / SRE)",
+      "Critical Event Delivery",
     ],
   },
   {
-    category: "LLM Patterns",
+    category: "Industries served",
     items: [
-      { name: "RAG" },
-      { name: "Prompt Engineering" },
-      { name: "Vector Databases" },
-      { name: "Tool Use / Function Calling" },
+      "Internet & SaaS",
+      "Gaming",
+      "Healthcare",
+      "Education",
+      "Financial Services (ICBC, Minsheng Bank, PSBC)",
     ],
   },
 ];
 
 export const experiences: Experience[] = [
   {
-    company: "Advantech",
-    role: "Backend Engineer",
-    start: "2023-05",
+    company: "NWCD (AWS China Region)",
+    role: "Technical Account Manager",
+    start: "2019-01",
     end: "Present",
-    location: "Taipei, Taiwan",
+    location: "Beijing, China",
+    description:
+      "Key Industries: Internet, Gaming, Healthcare, SaaS, Education",
     bullets: [
-      "Architected and implemented multi-tenant LLM application platform using .NET 8 / ASP.NET Core, supporting 20+ internal AI use cases",
-      "Built LLM integration layer with OpenAI, Claude (via OpenRouter), and Ollama, including prompt engineering, function calling, and response validation",
-      "Designed and deployed RAG pipelines using vector databases, integrating with existing Microsoft SQL Server and PostgreSQL data sources",
-      "Migrated legacy Kubernetes services to AWS EKS, reducing infrastructure cost by 25% and improving deployment frequency",
-      "Built SageMaker ML model inference pipelines orchestrated by Step Functions for batch prediction jobs",
+      "Spearheaded Enterprise On-Ramp Program, achieving 36% YoY customer growth and 50.8% AWS Usage fee growth by Q3 2025",
+      "Directed large-scale cloud migration and modernization projects, achieving 30%+ cost reduction and improved system performance",
+      "Coordinated across Support, Product, and SRE teams to deliver critical events (game launches, peak traffic), ensuring zero major incidents",
+      "Resolved high-priority technical escalations, improving customer satisfaction for TAM to 100%",
     ],
-    stack: [
-      ".NET 8",
-      "ASP.NET Core",
-      "Python",
-      "PostgreSQL",
-      "MSSQL",
-      "Redis",
-      "Docker",
-      "Kubernetes",
-      "AWS",
+    subsections: [
+      {
+        title: "AIOps / GenAI Innovation",
+        bullets: [
+          "Designed and implemented an AIOps agent platform (alert + agent automation) for intelligent operations",
+          "Automated incident diagnosis and runbook execution, reducing MTTR by 40%+",
+          "Enabled natural language operations and predictive monitoring across cloud environments",
+          "Designed custom solutions / POCs to resolve customer pain points by building Dify workflows in H20",
+          "Delivered technical webinars and blogs on operations and GenAI topics",
+        ],
+      },
     ],
+    tags: ["AWS", "AIOps", "GenAI", "TAM", "FinOps"],
   },
   {
-    company: "ShopBack",
-    role: "Backend Engineer",
-    start: "2020-07",
-    end: "2023-04",
-    location: "Taipei, Taiwan",
+    company: "Thomson Reuters",
+    role: "Technical Account Manager (Pre-Sales & Post-Sales)",
+    start: "2015-09",
+    end: "2018-12",
+    location: "Beijing, China",
+    description:
+      "Key Accounts: ICBC, China Minsheng Bank, Postal Savings Bank of China",
     bullets: [
-      "Refactored core cashback service into a modular, distributed system using .NET Core, Go, and MongoDB, supporting 1M+ daily transactions",
-      "Migrated legacy monolithic services to a microservices architecture, reducing inter-service coupling and enabling independent deployments",
-      "Improved P95 API response time by 30% through database query optimization, Redis caching, and asynchronous event-driven processing",
-      "Implemented distributed messaging using RabbitMQ and Apache Kafka for reliable event propagation across services",
+      "Defined technical strategies and architectures for major financial institutions (ICBC, Minsheng Bank, PSBC)",
+      "Partnered with account teams to drive solution adoption and long-term customer success",
     ],
-    stack: [".NET Core", "Go", "MongoDB", "Redis", "Kafka", "RabbitMQ"],
+    tags: ["Financial Services", "Pre-Sales", "Post-Sales", "TAM"],
   },
   {
-    company: "KKday",
-    role: "Backend Engineer",
-    start: "2019-05",
-    end: "2020-05",
+    company: "IBM",
+    role: "Senior IT Specialist (Pre-Sales)",
+    start: "2008-02",
+    end: "2015-09",
     location: "Taipei, Taiwan",
     bullets: [
-      "Designed and built core booking system services handling 10K+ daily bookings",
-      "Implemented RESTful APIs and integrated with third-party payment gateways and supplier APIs",
-      "Automated data pipeline to enrich product information, processing 100K+ records daily",
+      "Delivered core banking system upgrades and architecture transformations",
+      "Improved system performance, availability, and cross-region architecture resilience",
     ],
-    stack: ["C#", ".NET Core", "MSSQL", "Redis"],
+    tags: ["Core Banking", "Architecture", "Pre-Sales"],
   },
   {
-    company: "Uitox",
-    role: "Software Engineer",
-    start: "2017-10",
-    end: "2019-04",
-    location: "Taipei, Taiwan",
+    company: "Earlier Roles",
+    role: "Software Engineer · Intern",
+    start: "2007",
+    end: "2008",
+    location: "Taiwan",
     bullets: [
-      "Built backend services for cross-border e-commerce platform, supporting 50K+ SKUs and multi-currency transactions",
-      "Designed and developed product catalog and inventory management APIs",
-      "Built internal tools for merchant onboarding, product listing, and order management",
+      "Software Engineer at ShineWave (2008)",
+      "Intern at Moker (2007)",
     ],
-    stack: ["Java", "MySQL", "Redis"],
+    tags: ["Software Engineering"],
   },
+];
+
+export const certificates: Certificate[] = [
+  { name: "AWS Certified Developer – Associate" },
+  { name: "AWS Certified Solutions Architect – Associate" },
+  { name: "AWS Certified Solutions Architect – Professional", code: "SAP" },
+  { name: "AWS Certified Big Data – Specialty", code: "BDS" },
+  { name: "AWS Certified Database – Specialty", code: "DBS" },
+  { name: "AWS Certified Security – Specialty", code: "SCS" },
+  { name: "AWS Certified Machine Learning – Specialty", code: "MLS" },
 ];
 
 export const projects: Project[] = [
   {
-    name: "RAG Payment Support Chatbot",
-    period: "2025",
+    name: "AIOps Agent Platform",
+    period: "2019 – Present",
     description:
-      "LLM-powered customer support agent for payment inquiries, using retrieval-augmented generation over a knowledge base of transaction policies and FAQs.",
+      "Multi-component agent platform for intelligent cloud operations — automated alert triage, incident diagnosis, and runbook execution.",
     bullets: [
-      "Built RAG pipeline combining vector search (Qdrant) with keyword retrieval (BM25) and LLM reranking",
-      "Implemented function calling for transactional queries (refund status, payment history) against the payment service",
-      "Achieved 85% deflection rate on common payment issues, reducing Tier-1 ticket volume",
+      "Built the platform while serving as TAM at NWCD, where it underpins incident response for enterprise customers across multiple industries",
+      "Reduced MTTR by 40%+ through automated diagnosis and runbook execution",
+      "Enabled natural-language operations and predictive monitoring across cloud environments",
     ],
-    stack: ["Python", "FastAPI", "Qdrant", "PostgreSQL", "Claude", "OpenAI"],
+    tags: ["AWS", "AIOps", "Agents", "MTTR"],
+    link: {
+      label: "github.com/wchengyen/kiro-devops",
+      href: "https://github.com/wchengyen/kiro-devops",
+    },
   },
   {
-    name: "17Media Content Moderation Pipeline",
-    period: "2022",
-    description:
-      "Distributed pipeline for moderating user-generated content (text + images) for compliance and community guidelines.",
-    bullets: [
-      "Built a Node.js stream processing pipeline handling 500K+ daily content items",
-      "Integrated third-party AI moderation APIs and a custom rule engine for policy enforcement",
-      "Built a Java admin dashboard for moderator review queues and case management",
-    ],
-    stack: ["Node.js", "Java", "MongoDB", "Redis", "Kafka"],
-  },
-  {
-    name: "ShopBack Cashback Service Refactor",
-    period: "2021",
-    description:
-      "Refactored the cashback service to a modular, distributed system to improve reliability and scale for a 1M+ daily-transaction workload.",
-    bullets: [
-      "Designed modular service boundaries in .NET Core and Go, with MongoDB and Redis as primary data stores",
-      "Introduced event-driven messaging with RabbitMQ and Kafka for cross-service consistency",
-      "Cut P95 API latency by 30% through query optimization, caching, and async processing",
-    ],
-    stack: [".NET Core", "Go", "MongoDB", "Redis", "Kafka", "RabbitMQ"],
-  },
-  {
-    name: "Uitox Cross-Border E-Commerce Platform",
-    period: "2018",
-    description:
-      "Backend services for a cross-border e-commerce platform with multi-currency support and large-scale catalog management.",
-    bullets: [
-      "Built catalog and inventory services in Java supporting 50K+ SKUs",
-      "Implemented multi-currency pricing and settlement APIs for cross-border transactions",
-      "Built internal merchant tooling for onboarding, listing, and order workflows",
-    ],
-    stack: ["Java", "MySQL", "Redis"],
-  },
-  {
-    name: "LLM Batch Summarization Service",
-    period: "2025",
-    description:
-      "Serverless batch pipeline that summarizes long-form documents (reports, tickets) using an LLM, with cost and quality controls.",
-    bullets: [
-      "Built the orchestration layer on AWS Step Functions, dispatching chunks to a SageMaker-hosted model",
-      "Implemented map-reduce style summarization with overlap and quality scoring for 100K+ documents",
-      "Added prompt-version pinning and a manual review path for low-confidence outputs",
-    ],
-    stack: ["Python", "AWS Step Functions", "SageMaker", "Lambda", "S3"],
-  },
-  {
-    name: "Kubernetes Migration & Cost Optimization",
+    name: "Dify Workflow POCs on H20 (Enterprise Customers)",
     period: "2024",
     description:
-      "Migrated legacy on-prem Kubernetes workloads to AWS EKS, refactoring deployments for cost and reliability.",
+      "Custom GenAI POCs built with Dify on H20 to address specific enterprise pain points.",
     bullets: [
-      "Re-architected workloads for spot / on-demand mix and right-sized node groups",
-      "Cut infrastructure cost by 25% and improved deployment frequency through GitOps pipelines",
+      "Designed workflow-based solutions for operational use cases (alert triage, knowledge retrieval, customer support)",
+      "Translated customer pain points into deployable, low-friction GenAI workflows",
     ],
-    stack: ["Kubernetes", "AWS EKS", "Helm", "ArgoCD"],
+    tags: ["Dify", "H20", "GenAI", "POC"],
+  },
+  {
+    name: "CPU-based LLM Inference Webinar",
+    period: "2024-08",
+    description:
+      "Public technical session: deploying LLM inference services on CPU-only infrastructure for cost-sensitive workloads.",
+    bullets: [
+      "Open-sourced the deployment pattern via webinar content",
+      "Targeted teams that need LLM capability without GPU spend",
+    ],
+    tags: ["LLM", "Inference", "CPU", "Webinar"],
+  },
+  {
+    name: "Stable Diffusion / AIGC Webinar",
+    period: "2023-04",
+    description:
+      "Public technical session: hands-on with Stable Diffusion for image generation, demystifying AIGC for enterprise audiences.",
+    bullets: [
+      "Drove adoption of AIGC techniques inside customer engineering teams",
+      "Cited internally as a reference for early GenAI enablement",
+    ],
+    tags: ["Stable Diffusion", "AIGC", "Webinar"],
+  },
+  {
+    name: "NWCD Public Blog: 建构自动化运维手册和操作手册实现卓越运营",
+    period: "2022-12",
+    description:
+      "Authored blog on building automated operations and runbooks to achieve operational excellence — published on the NWCD public blog.",
+    bullets: [
+      "Codified a practical pattern for runbook automation",
+      "Drew from real customer engagements at NWCD",
+    ],
+    tags: ["Blog", "Runbooks", "Operations"],
+  },
+  {
+    name: "AWS China Customer Story (Public Reference)",
+    period: "2024",
+    description:
+      "Public customer-success story on the AWS China (NWCD) website, covering cost reduction and efficiency gains for an enterprise customer.",
+    bullets: [
+      "Cited as a TAM-led outcome — public, named reference",
+    ],
+    tags: ["Customer Story", "Public Reference"],
+    link: {
+      label: "amazonaws.cn customer-stories",
+      href: "https://www.amazonaws.cn/customer-stories/reduce-cost-and-increase-efficiency/",
+    },
   },
 ];
 
-export const education: Education = {
-  school: "國立臺灣科技大學",
-  schoolEn: "National Taiwan University of Science and Technology",
-  department: "Department of Information Management",
-  period: "2013 – 2017",
-};
-
-export const languages: Language[] = [
-  { name: "Chinese", level: "Native" },
-  { name: "English", level: "Intermediate" },
-  { name: "Japanese", level: "Basic" },
+export const education: Education[] = [
+  {
+    school: "University of Florida – Warrington College of Business",
+    schoolEn: "University of Florida – Warrington College of Business",
+    department: "Master of Science in Decision & Information Science",
+    period: "Dec 2007",
+    detail: "GPA: 3.66 / 4.0 · Teaching Assistant for Database Systems (1 year)",
+  },
+  {
+    school: "National Central University (NCU)",
+    schoolEn: "National Central University (NCU)",
+    department: "Bachelor of Business Administration in Management Information Systems",
+    period: "Fall 2003",
+    detail: "Managed IT infrastructure for the School of Management (2 years)",
+  },
 ];
 
-export const interests: string[] = [
-  "Open-source LLM applications",
-  "Hiking",
-  "RAG architectures",
-  "Ragas evaluation",
+export const languages: Language[] = [
+  { name: "Mandarin", level: "Proficient" },
+  { name: "English", level: "Proficient" },
 ];

@@ -4,9 +4,10 @@ import { useTheme } from "../hooks/useTheme";
 const navItems = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
+  { href: "#certificates", label: "Certificates" },
   { href: "#education", label: "Education" },
+  { href: "#public-sharing", label: "Public Sharing" },
   { href: "#contact", label: "Contact" },
 ];
 

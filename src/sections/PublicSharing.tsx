@@ -2,12 +2,12 @@ import { Section } from "../components/Section";
 import { Pill } from "../components/Pill";
 import { projects } from "../data/resume";
 
-export function Projects() {
+export function PublicSharing() {
   return (
     <Section
-      id="projects"
-      eyebrow="Selected work"
-      title="Projects"
+      id="public-sharing"
+      eyebrow="Speaking & Writing"
+      title="Public Sharing"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {projects.map((p) => (
@@ -34,7 +34,7 @@ export function Projects() {
               ))}
             </ul>
             <div className="mt-4 flex flex-wrap gap-1.5">
-              {p.stack.map((s) => (
+              {p.tags.map((s) => (
                 <Pill key={s}>{s}</Pill>
               ))}
             </div>

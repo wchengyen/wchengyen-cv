@@ -7,7 +7,6 @@ export function Hero() {
       id="top"
       className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden"
     >
-      {/* Subtle background gradient */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/60 via-transparent to-transparent dark:from-brand-900/20"
@@ -46,6 +45,12 @@ export function Hero() {
             </svg>
           </a>
           <a
+            href="#certificates"
+            className="inline-flex items-center gap-2 rounded-md border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors"
+          >
+            AWS certs (7)
+          </a>
+          <a
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +84,7 @@ export function Hero() {
             <dd className="mt-1">
               <a
                 href={`mailto:${profile.email}`}
-                className="text-slate-800 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400"
+                className="text-slate-800 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 break-all"
               >
                 {profile.email}
               </a>
@@ -90,9 +95,9 @@ export function Hero() {
               Focus
             </dt>
             <dd className="mt-1 flex flex-wrap gap-1.5">
-              <Pill>Backend</Pill>
-              <Pill>Distributed Systems</Pill>
-              <Pill>LLM Apps</Pill>
+              <Pill>TAM</Pill>
+              <Pill>AIOps</Pill>
+              <Pill>GenAI</Pill>
             </dd>
           </div>
         </dl>

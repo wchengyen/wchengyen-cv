@@ -1,0 +1,90 @@
+# Weng-Hsiang Cheng — CV
+
+> Senior Backend / Platform Engineer based in Taipei, Taiwan. 7+ years building high-traffic backend systems, distributed services, and LLM-integrated applications.
+
+## About
+
+Weng-Hsiang Cheng (鄭文祥) is a senior backend engineer focused on high-traffic distributed systems and LLM-integrated applications. He has 7+ years of experience designing RESTful APIs, microservices, and data pipelines processing millions of records daily. He has a track record of leading cross-team projects, mentoring engineers, and delivering measurable business impact through system optimization.
+
+## Contact
+
+- Email: wchengyen@gmail.com
+- Phone: +886-910-602-378
+- GitHub: https://github.com/wchengyen
+- Location: Taipei, Taiwan
+
+## Core Skills
+
+- **Languages**: C# / .NET Core, Python, Go, Node.js, Java
+- **Datastores**: Microsoft SQL Server, PostgreSQL, MongoDB, Redis
+- **Infrastructure**: Docker, Kubernetes, AWS (EC2 / S3 / Lambda / SageMaker / Step Functions)
+- **AI / LLM**: OpenAI, Claude, OpenRouter, Ollama
+- **LLM Patterns**: RAG, Prompt Engineering, Vector Databases, Tool Use / Function Calling
+
+## Experience
+
+### Advantech — Backend Engineer (2023-05 – Present)
+- Architected a multi-tenant LLM application platform using .NET 8 / ASP.NET Core, supporting 20+ internal AI use cases
+- Built an LLM integration layer with OpenAI, Claude (via OpenRouter), and Ollama, including prompt engineering, function calling, and response validation
+- Designed and deployed RAG pipelines using vector databases, integrating with existing Microsoft SQL Server and PostgreSQL data sources
+- Migrated legacy Kubernetes services to AWS EKS, reducing infrastructure cost by 25% and improving deployment frequency
+- Built SageMaker ML model inference pipelines orchestrated by Step Functions for batch prediction jobs
+- Stack: .NET 8, ASP.NET Core, Python, PostgreSQL, MSSQL, Redis, Docker, Kubernetes, AWS
+
+### ShopBack — Backend Engineer (2020-07 – 2023-04)
+- Refactored core cashback service into a modular, distributed system using .NET Core, Go, and MongoDB, supporting 1M+ daily transactions
+- Migrated legacy monolithic services to a microservices architecture, reducing inter-service coupling
+- Improved P95 API response time by 30% through database query optimization, Redis caching, and async event-driven processing
+- Implemented distributed messaging with RabbitMQ and Apache Kafka
+- Stack: .NET Core, Go, MongoDB, Redis, Kafka, RabbitMQ
+
+### KKday — Backend Engineer (2019-05 – 2020-05)
+- Designed and built core booking system services handling 10K+ daily bookings
+- Implemented RESTful APIs and integrated with third-party payment gateways and supplier APIs
+- Automated data pipeline to enrich product information, processing 100K+ records daily
+- Stack: C#, .NET Core, MSSQL, Redis
+
+### Uitox — Software Engineer (2017-10 – 2019-04)
+- Built backend services for cross-border e-commerce platform, supporting 50K+ SKUs and multi-currency transactions
+- Designed and developed product catalog and inventory management APIs
+- Built internal tools for merchant onboarding, product listing, and order management
+- Stack: Java, MySQL, Redis
+
+## Selected Projects
+
+### RAG Payment Support Chatbot (2025)
+LLM-powered customer support agent for payment inquiries, using retrieval-augmented generation over a knowledge base of transaction policies and FAQs. Achieved 85% deflection rate on common payment issues.
+Stack: Python, FastAPI, Qdrant, PostgreSQL, Claude, OpenAI
+
+### 17Media Content Moderation Pipeline (2022)
+Distributed pipeline for moderating user-generated content (text + images). Node.js stream processing pipeline handling 500K+ daily content items.
+Stack: Node.js, Java, MongoDB, Redis, Kafka
+
+### ShopBack Cashback Service Refactor (2021)
+Refactored the cashback service to a modular, distributed system for 1M+ daily transactions. Cut P95 API latency by 30%.
+Stack: .NET Core, Go, MongoDB, Redis, Kafka, RabbitMQ
+
+### LLM Batch Summarization Service (2025)
+Serverless batch pipeline that summarizes long-form documents using an LLM, with cost and quality controls. Orchestrated on AWS Step Functions with SageMaker-hosted model.
+Stack: Python, AWS Step Functions, SageMaker, Lambda, S3
+
+### Kubernetes Migration & Cost Optimization (2024)
+Migrated legacy on-prem Kubernetes workloads to AWS EKS. Cut infrastructure cost by 25%.
+Stack: Kubernetes, AWS EKS, Helm, ArgoCD
+
+## Education
+
+- National Taiwan University of Science and Technology (NTUST) — Department of Information Management, 2013 – 2017
+
+## Languages
+
+- Chinese — Native
+- English — Intermediate
+- Japanese — Basic
+
+## Interests
+
+- Open-source LLM applications
+- Hiking
+- RAG architectures
+- Ragas evaluation

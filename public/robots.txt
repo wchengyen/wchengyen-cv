@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wchengyen.github.io/wchengyen-cv/sitemap.xml

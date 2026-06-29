@@ -3,7 +3,7 @@ import type { ResumeData } from "./types";
 export const zh: ResumeData = {
   profile: {
     name: "ChengYen Wang",
-    nameAlt: "王承彥",
+    nameAlt: "王正彥",
     title: "技術客戶經理 (TAM)",
     location: "中國北京",
     email: "wchengyen0106@126.com",

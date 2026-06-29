@@ -1,7 +1,14 @@
-import { profile } from "../data/resume";
 import { Pill } from "../components/Pill";
+import { useI18n } from "../hooks/useI18n";
 
 export function Hero() {
+  const { data, lang } = useI18n();
+  const { profile } = data;
+  const t = data.ui.hero;
+
+  // Quick highlight pills per language.
+  const focusPills = lang === "zh" ? ["TAM", "AIOps", "GenAI"] : ["TAM", "AIOps", "GenAI"];
+
   return (
     <section
       id="top"
@@ -13,13 +20,20 @@ export function Hero() {
       />
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <p className="font-mono text-sm text-brand-600 dark:text-brand-400">
-          Hi, my name is
+          {t.greeting}
         </p>
         <h1 className="mt-2 text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
-          {profile.name}.
+          {profile.name}
+          {profile.nameAlt && (
+            <span className="ml-2 text-2xl sm:text-3xl font-medium text-slate-500 dark:text-slate-400">
+              ({profile.nameAlt})
+            </span>
+          )}
+          .
         </h1>
         <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-slate-500 dark:text-slate-400">
-          {profile.title}.
+          {profile.title}
+          {lang === "en" ? "." : ""}
         </h2>
         <p className="mt-6 max-w-2xl text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
           {profile.summary}
@@ -30,7 +44,7 @@ export function Hero() {
             href="#contact"
             className="inline-flex items-center gap-2 rounded-md bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 text-sm font-medium transition-colors"
           >
-            Get in touch
+            {t.cta}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -48,7 +62,7 @@ export function Hero() {
             href="#certificates"
             className="inline-flex items-center gap-2 rounded-md border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors"
           >
-            AWS certs (7)
+            {t.certsCta}
           </a>
           <a
             href={profile.github}
@@ -56,7 +70,7 @@ export function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-md border border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors"
           >
-            GitHub
+            {t.githubCta}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -71,7 +85,7 @@ export function Hero() {
         <dl className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           <div>
             <dt className="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Based in
+              {t.statBasedIn}
             </dt>
             <dd className="mt-1 text-slate-800 dark:text-slate-200">
               {profile.location}
@@ -79,7 +93,7 @@ export function Hero() {
           </div>
           <div>
             <dt className="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Email
+              {t.statEmail}
             </dt>
             <dd className="mt-1">
               <a
@@ -92,12 +106,12 @@ export function Hero() {
           </div>
           <div>
             <dt className="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Focus
+              {t.statFocus}
             </dt>
             <dd className="mt-1 flex flex-wrap gap-1.5">
-              <Pill>TAM</Pill>
-              <Pill>AIOps</Pill>
-              <Pill>GenAI</Pill>
+              {focusPills.map((p) => (
+                <Pill key={p}>{p}</Pill>
+              ))}
             </dd>
           </div>
         </dl>

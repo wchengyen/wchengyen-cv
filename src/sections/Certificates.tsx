@@ -1,12 +1,14 @@
 import { Section } from "../components/Section";
-import { certificates } from "../data/resume";
+import { useI18n } from "../hooks/useI18n";
 
 export function Certificates() {
+  const { data } = useI18n();
+  const t = data.ui.certificates;
   return (
-    <Section id="certificates" eyebrow="AWS" title="Certificates">
+    <Section id="certificates" eyebrow={t.eyebrow} title={t.title}>
       <div className="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 p-6">
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {certificates.map((c) => (
+          {data.certificates.map((c) => (
             <li
               key={c.name}
               className="flex items-start gap-3 text-slate-700 dark:text-slate-300"

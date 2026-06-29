@@ -1,16 +1,14 @@
 import { Section } from "../components/Section";
 import { Pill } from "../components/Pill";
-import { projects } from "../data/resume";
+import { useI18n } from "../hooks/useI18n";
 
 export function PublicSharing() {
+  const { data } = useI18n();
+  const t = data.ui.publicSharing;
   return (
-    <Section
-      id="public-sharing"
-      eyebrow="Speaking & Writing"
-      title="Public Sharing"
-    >
+    <Section id="public-sharing" eyebrow={t.eyebrow} title={t.title}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        {projects.map((p) => (
+        {data.projects.map((p) => (
           <article
             key={p.name}
             className="group relative flex flex-col rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 p-5 sm:p-6 transition-colors hover:border-slate-300 dark:hover:border-slate-700"

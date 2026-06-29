@@ -1,3 +1,4 @@
+import { I18nProvider } from "./hooks/useI18n";
 import { Header } from "./components/Header";
 import { Hero } from "./sections/Hero";
 import { About } from "./sections/About";
@@ -11,20 +12,22 @@ import { Footer } from "./sections/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Certificates />
-        <Education />
-        <PublicSharing />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <I18nProvider>
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Skills />
+          <Certificates />
+          <Education />
+          <PublicSharing />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </I18nProvider>
   );
 }
 

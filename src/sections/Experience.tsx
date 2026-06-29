@@ -1,20 +1,24 @@
 import { Section } from "../components/Section";
 import { Pill } from "../components/Pill";
-import { experiences, type Experience } from "../data/resume";
+import { useI18n } from "../hooks/useI18n";
+import type { Experience as ExperienceT } from "../data/types";
 
-function formatPeriod(start: string, end: string) {
+function formatPeriod(start: string, end: string, lang: "en" | "zh") {
   const fmt = (m: string) => {
-    if (m === "Present") return "Present";
-    // Earlier "Earlier Roles" entries use bare years like "2007" — render as-is.
+    if (m === "Present") return lang === "zh" ? "至今" : "Present";
     if (/^\d{4}$/.test(m)) return m;
     const [y, mm] = m.split("-");
     const date = new Date(Number(y), Number(mm) - 1, 1);
+    if (lang === "zh") {
+      return `${y} 年 ${Number(mm)} 月`;
+    }
     return date.toLocaleString("en-US", { month: "short", year: "numeric" });
   };
   return `${fmt(start)} — ${fmt(end)}`;
 }
 
-function JobItem({ job }: { job: Experience }) {
+function JobItem({ job }: { job: ExperienceT }) {
+  const { lang } = useI18n();
   return (
     <li className="relative">
       <span
@@ -30,7 +34,7 @@ function JobItem({ job }: { job: Experience }) {
         </span>
       </div>
       <p className="mt-1 font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
-        {formatPeriod(job.start, job.end)} · {job.location}
+        {formatPeriod(job.start, job.end, lang)} · {job.location}
       </p>
       {job.description && (
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 italic">
@@ -70,10 +74,12 @@ function JobItem({ job }: { job: Experience }) {
 }
 
 export function Experience() {
+  const { data } = useI18n();
+  const t = data.ui.experience;
   return (
-    <Section id="experience" eyebrow="Where I've worked" title="Experience">
+    <Section id="experience" eyebrow={t.eyebrow} title={t.title}>
       <ol className="relative space-y-10 border-l border-slate-200 dark:border-slate-800 pl-6 sm:pl-8 ml-2 sm:ml-3">
-        {experiences.map((job) => (
+        {data.experiences.map((job) => (
           <JobItem
             key={`${job.company}-${job.start}-${job.end}`}
             job={job}

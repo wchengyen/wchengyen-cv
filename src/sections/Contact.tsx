@@ -1,15 +1,15 @@
 import { Section } from "../components/Section";
-import { profile } from "../data/resume";
+import { useI18n } from "../hooks/useI18n";
 
 export function Contact() {
+  const { data } = useI18n();
+  const { profile } = data;
+  const t = data.ui.contact;
   return (
-    <Section id="contact" eyebrow="Get in touch" title="Contact">
+    <Section id="contact" eyebrow={t.eyebrow} title={t.title}>
       <div className="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 p-6 sm:p-8">
         <p className="text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
-          I'm a <strong>Technical Account Manager</strong> focused on enterprise
-          cloud adoption, AIOps, and GenAI enablement. For collaboration, speaking,
-          or consulting — the fastest way to reach me is by email. I usually reply
-          within a couple of business days.
+          {t.blurb}
         </p>
         <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm">
           <a

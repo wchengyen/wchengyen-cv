@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../hooks/useTheme";
-
-const navItems = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#certificates", label: "Certificates" },
-  { href: "#education", label: "Education" },
-  { href: "#public-sharing", label: "Public Sharing" },
-  { href: "#contact", label: "Contact" },
-];
+import { useI18n } from "../hooks/useI18n";
+import { availableLangs, langLabels, type Lang } from "../data";
 
 export function Header() {
-  const { theme, toggle } = useTheme();
+  const { theme, toggle: toggleTheme } = useTheme();
+  const { lang, setLang, data } = useI18n();
+  const t = data.ui.themeToggle;
+  const tLang = data.ui.languageToggle;
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -21,6 +16,17 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const nav = data.ui.nav;
+  const navItems: { href: string; label: string }[] = [
+    { href: "#about", label: nav.about },
+    { href: "#experience", label: nav.experience },
+    { href: "#skills", label: nav.skills },
+    { href: "#certificates", label: nav.certificates },
+    { href: "#education", label: nav.education },
+    { href: "#public-sharing", label: nav.publicSharing },
+    { href: "#contact", label: nav.contact },
+  ];
 
   return (
     <header
@@ -49,43 +55,68 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <button
-          type="button"
-          onClick={toggle}
-          aria-label={
-            theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-          }
-          className="rounded-md p-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-        >
-          {theme === "dark" ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-5"
-            >
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="size-5"
-            >
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-            </svg>
-          )}
-        </button>
+        <div className="flex items-center gap-1">
+          <div
+            role="group"
+            aria-label={tLang.label}
+            className="inline-flex items-center rounded-md border border-slate-200 dark:border-slate-700 overflow-hidden text-xs font-mono"
+          >
+            {availableLangs.map((code: Lang) => {
+              const active = code === lang;
+              return (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => setLang(code)}
+                  aria-pressed={active}
+                  className={
+                    "px-2 py-1 transition-colors " +
+                    (active
+                      ? "bg-brand-600 text-white"
+                      : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800")
+                  }
+                >
+                  {langLabels[code]}
+                </button>
+              );
+            })}
+          </div>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? t.toLight : t.toDark}
+            className="rounded-md p-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          >
+            {theme === "dark" ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-5"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-5"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
     </header>
   );

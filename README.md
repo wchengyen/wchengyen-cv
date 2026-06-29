@@ -33,10 +33,24 @@ Edit the typed `profile`, `experiences`, `projects`, `skillGroups`, `education`,
 
 ## Deployment
 
-The site is configured for a **project page** at `https://<user>.github.io/wchengyen-cv/`:
+Deployed via **GitHub Pages** with the `gh-pages` branch (the classic, no-config-needed approach).
+
+**One-time setup in the GitHub UI:**
+
+1. Repo → **Settings** → **Pages**
+2. **Source**: `Deploy from a branch`
+3. **Branch**: `gh-pages` / `(root)`
+4. Click **Save**
+
+After that, every push to `main` triggers `.github/workflows/deploy.yml`, which builds `dist/` and pushes it to the `gh-pages` branch. The site is live at:
+
+**🌐 https://wchengyen.github.io/wchengyen-cv/**
+
+### Project site vs. user site
+
+The repo is configured as a **project site** at `https://<user>.github.io/wchengyen-cv/`:
 
 - `vite.config.ts` sets `base: '/wchengyen-cv/'`
-- `.github/workflows/deploy.yml` builds and deploys to GitHub Pages on every push to `main`
 
 To deploy as a **user site** at `https://<user>.github.io/`:
 

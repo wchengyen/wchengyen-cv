@@ -1,22 +1,32 @@
 name: Deploy to GitHub Pages
 
+# This workflow builds the site and pushes the contents of `dist/` to the
+# `gh-pages` branch, which GitHub Pages serves as the public site.
+#
+# Setup (one-time, in the GitHub UI):
+#   1. Settings → Pages
+#   2. Source: "Deploy from a branch"
+#   3. Branch: `gh-pages` / `(root)`
+#   4. Save. Subsequent pushes to `main` rebuild automatically.
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# `contents: write` is required to push to the gh-pages branch.
+# `pages: write` lets the run update the Pages deployment status.
 permissions:
-  contents: read
+  contents: write
   pages: write
-  id-token: write
 
-# Avoid concurrent deploys overwriting each other
+# Prevent concurrent deploys from clobbering each other.
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,21 +44,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # Create a clean, single-commit history for gh-pages
+          force_orphan: true
+          # Use the GitHub Actions bot as the author of the gh-pages commit
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          # Quiet noisy git output
+          disable_nojekyll: false

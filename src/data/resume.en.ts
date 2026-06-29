@@ -190,6 +190,10 @@ export const en: ResumeData = {
         "Cited internally as a reference for early GenAI enablement",
       ],
       tags: ["Stable Diffusion", "AIGC", "Webinar"],
+      link: {
+        label: "nwcdcloud.cn playback",
+        href: "https://www.nwcdcloud.cn/playback.aspx?id=51",
+      },
     },
     {
       name: "NWCD Public Blog: 建构自动化运维手册和操作手册实现卓越运营",

@@ -194,6 +194,10 @@ export const zh: ResumeData = {
         "在公司內部被引用為早期 GenAI 推動的範例",
       ],
       tags: ["Stable Diffusion", "AIGC", "Webinar"],
+      link: {
+        label: "nwcdcloud.cn 播放",
+        href: "https://www.nwcdcloud.cn/playback.aspx?id=51",
+      },
     },
     {
       name: "NWCD 公開部落格:建构自动化运维手册和操作手册实现卓越运营",

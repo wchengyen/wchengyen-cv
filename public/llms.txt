@@ -76,6 +76,7 @@ Custom GenAI POCs built with Dify on H20 to address specific enterprise pain poi
 Public technical session on deploying LLM inference services on CPU-only infrastructure for cost-sensitive workloads.
 
 ### Stable Diffusion / AIGC Webinar (2023-04)
+https://www.nwcdcloud.cn/playback.aspx?id=51
 Public technical session on hands-on Stable Diffusion for image generation, demystifying AIGC for enterprise audiences.
 
 ### NWCD Public Blog: 建构自动化运维手册和操作手册实现卓越运营 (2022-12)
